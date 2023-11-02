@@ -1,8 +1,11 @@
+Button
+FlowContainer
+Label
+Panel
 TileMap
 ParallaxBackground
 Sprite2D
 ParallaxLayer
-Label
 Node2D
 RayCast2D
 Node
@@ -14,10 +17,8 @@ Line2D
 AnimationPlayer
 AnimatedSprite2D
 CanvasLayer
-Button
 Timer
 Path2D
 AnimationTree
 Camera2D
-Panel
 StaticBody2D
