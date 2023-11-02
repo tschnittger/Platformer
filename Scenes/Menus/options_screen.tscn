@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq8k6qp1ym8ke"]
+
+[ext_resource type="Script" path="res://Scenes/Menus/options_screen.gd" id="1_ppuyj"]
+[ext_resource type="PackedScene" uid="uid://n7v3pyvlfijo" path="res://Scenes/Background/background_2.tscn" id="2_e50u6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jyg2c"]
+font_size = 40
+
+[node name="options_screen" type="Node2D"]
+script = ExtResource("1_ppuyj")
+
+[node name="background_2" parent="." instance=ExtResource("2_e50u6")]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 560.0
+offset_right = 1400.0
+offset_bottom = 1080.0
+
+[node name="FlowContainer" type="FlowContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 60.0
+offset_right = 820.0
+offset_bottom = 1060.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 573.0
+offset_right = 841.0
+offset_bottom = 53.0
+text = "Options"
+label_settings = SubResource("LabelSettings_jyg2c")
+
+[node name="Back" type="Button" parent="."]
+offset_left = 24.0
+offset_top = 18.0
+offset_right = 190.0
+offset_bottom = 78.0
+text = "Back
+"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
