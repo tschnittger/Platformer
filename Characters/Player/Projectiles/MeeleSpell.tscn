@@ -1,0 +1,121 @@
+[gd_scene load_steps=13 format=3 uid="uid://d2cek31m0otys"]
+
+[ext_resource type="Script" path="res://Characters/Player/Projectiles/MeeleSpell.gd" id="1_hh5qx"]
+[ext_resource type="Texture2D" uid="uid://xpiwwhul3gr3" path="res://assets/Little witch/Little witch/Magic Spell/Pngs/magicSpell1.png" id="2_jgoju"]
+[ext_resource type="Texture2D" uid="uid://bxknrwipoy6r2" path="res://assets/Little witch/Little witch/Magic Spell/Pngs/magicSpell2.png" id="3_50isb"]
+[ext_resource type="Texture2D" uid="uid://crwmowih2gnaa" path="res://assets/Little witch/Little witch/Magic Spell/Pngs/magicSpell3.png" id="4_v06oi"]
+[ext_resource type="Texture2D" uid="uid://dfqya58r8ierc" path="res://assets/Little witch/Little witch/Magic Spell/Pngs/magicSpell4.png" id="5_bevov"]
+[ext_resource type="Texture2D" uid="uid://bwoi06bscfk2w" path="res://assets/Little witch/Little witch/Magic Spell/Pngs/magicSpell5.png" id="6_ex3jf"]
+[ext_resource type="Texture2D" uid="uid://47y8x1vlyvw4" path="res://assets/Little witch/Little witch/Magic Spell/Pngs/magicSpell6.png" id="7_5siw6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ti4ri"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jgoju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_50isb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_v06oi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bevov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ex3jf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5siw6")
+}],
+"loop": true,
+"name": &"Shooting",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_tmefn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Shooting"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_8wumf"]
+resource_name = "Shooting"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Shooting"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c77f4"]
+_data = {
+"RESET": SubResource("Animation_tmefn"),
+"Shooting": SubResource("Animation_8wumf")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ksfxs"]
+size = Vector2(26.6296, 20.835)
+
+[node name="meele_attack" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_hh5qx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ti4ri")
+animation = &"Shooting"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_c77f4")
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.170482, 4.02656)
+shape = SubResource("RectangleShape2D_ksfxs")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

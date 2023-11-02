@@ -1,0 +1,11 @@
+res://Characters/Player/player.tres
+res://scene_handler.tscn
+res://hook.tscn
+res://Characters/Player/Projectiles/hook.tscn
+res://Scenes/Background/background.tscn
+res://Characters/Player/Projectiles/MeeleSpell.tscn
+res://Characters/Player/player.tscn
+res://Scenes/Background/background_2.tscn
+res://scene_handler.gd
+res://Characters/Player/Projectiles/hook.gd
+res://Scenes/Stages/map_arena.tscn

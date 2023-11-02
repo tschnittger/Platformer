@@ -1,0 +1,612 @@
+[gd_scene load_steps=73 format=3 uid="uid://kic4ptnym7o6"]
+
+[ext_resource type="Texture2D" uid="uid://cnp01kxrjuuxc" path="res://assets/Little witch/Little witch/69x56/Pngs/Idle Animation/Idleanimation1.png" id="1_d6m2n"]
+[ext_resource type="Texture2D" uid="uid://1h7uy1ffg0xc" path="res://assets/Little witch/Little witch/69x56/Sprite sheet/DeathAnimation.png" id="1_npngw"]
+[ext_resource type="Texture2D" uid="uid://dv5408byx2yes" path="res://assets/Little witch/Little witch/85x56/Pngs/Jump Animation/JumpAnimation9.png" id="2_a66mg"]
+[ext_resource type="Texture2D" uid="uid://0hiwcau5fr2t" path="res://assets/Little witch/Little witch/69x56/Pngs/Idle Animation/Idleanimation2.png" id="2_np477"]
+[ext_resource type="Texture2D" uid="uid://rnhil1uu6u0d" path="res://assets/Little witch/Little witch/69x56/Pngs/Idle Animation/Idleanimation3.png" id="3_au46v"]
+[ext_resource type="Texture2D" uid="uid://ct0yiqcvsl0tr" path="res://assets/Little witch/Little witch/85x56/Pngs/Jump Animation/JumpAnimation10.png" id="3_yc8ho"]
+[ext_resource type="Texture2D" uid="uid://bwsfdysgqxqu7" path="res://assets/Little witch/Little witch/85x56/Pngs/Jump Animation/JumpAnimation11.png" id="4_2dv5l"]
+[ext_resource type="Texture2D" uid="uid://bg4ew4fiximmj" path="res://assets/Little witch/Little witch/69x56/Pngs/Idle Animation/Idleanimation4.png" id="4_u2lrg"]
+[ext_resource type="Texture2D" uid="uid://brbtr2o6mca0j" path="res://assets/Little witch/Little witch/69x56/Pngs/Idle Animation/Idleanimation5.png" id="5_v1rw1"]
+[ext_resource type="Texture2D" uid="uid://dqmxcy15ycwwp" path="res://assets/Little witch/Little witch/69x56/Pngs/Idle Animation/Idleanimation6.png" id="6_esaey"]
+[ext_resource type="Texture2D" uid="uid://8o58e0hd21xy" path="res://assets/Little witch/Little witch/69x56/Pngs/Idle Animation/Idleanimation7.png" id="7_0kgnw"]
+[ext_resource type="Texture2D" uid="uid://cbvqj3vcnpo11" path="res://assets/Little witch/Little witch/69x56/Pngs/Idle Animation/Idleanimation8.png" id="8_70tb5"]
+[ext_resource type="Texture2D" uid="uid://do72wxceewaom" path="res://assets/Little witch/Little witch/69x56/Pngs/Idle Animation/Idleanimation9.png" id="9_t1wy8"]
+[ext_resource type="Texture2D" uid="uid://don20yhiw428v" path="res://assets/Little witch/Little witch/69x56/Pngs/Idle Animation/Idleanimation10.png" id="10_facgs"]
+[ext_resource type="Texture2D" uid="uid://c6xd00m06y815" path="res://assets/Little witch/Little witch/69x56/Pngs/Idle Animation/Idleanimation11.png" id="11_y3mx0"]
+[ext_resource type="Texture2D" uid="uid://ddvewg5gadwir" path="res://assets/Little witch/Little witch/69x56/Pngs/Idle Animation/Idleanimation12.png" id="12_ear64"]
+[ext_resource type="Texture2D" uid="uid://dwlqv60d3r0th" path="res://assets/Little witch/Little witch/69x56/Pngs/Idle Animation/Idleanimation13.png" id="13_wn240"]
+[ext_resource type="Texture2D" uid="uid://ds4pt2ooeaqe2" path="res://assets/Little witch/Little witch/69x56/Pngs/Run Animation/Runanimation1.png" id="14_v7nwg"]
+[ext_resource type="Texture2D" uid="uid://chea84t0tf67v" path="res://assets/Little witch/Little witch/69x56/Pngs/Run Animation/Runanimation2.png" id="15_5a0kh"]
+[ext_resource type="Texture2D" uid="uid://bpejuq6chrb3q" path="res://assets/Little witch/Little witch/69x56/Pngs/Jump Animation/Jumpanimation1.png" id="15_f2jj3"]
+[ext_resource type="Texture2D" uid="uid://cbkp0l6y3472f" path="res://assets/Little witch/Little witch/69x56/Pngs/Jump Animation/Jumpanimation2.png" id="16_81qdb"]
+[ext_resource type="Texture2D" uid="uid://xupm22nbwldx" path="res://assets/Little witch/Little witch/69x56/Pngs/Run Animation/Runanimation3.png" id="16_j3uba"]
+[ext_resource type="Texture2D" uid="uid://bve2c6e4ra5tp" path="res://assets/Little witch/Little witch/69x56/Pngs/Run Animation/Runanimation4.png" id="17_58382"]
+[ext_resource type="Texture2D" uid="uid://dt53kidq2v217" path="res://assets/Little witch/Little witch/69x56/Pngs/Jump Animation/Jumpanimation3.png" id="17_g46bx"]
+[ext_resource type="Texture2D" uid="uid://bwj51pre2rbwy" path="res://assets/Little witch/Little witch/69x56/Pngs/Jump Animation/Jumpanimation4.png" id="18_8c2ur"]
+[ext_resource type="Texture2D" uid="uid://hm6hny6ahxhi" path="res://assets/Little witch/Little witch/69x56/Pngs/Run Animation/Runanimation5.png" id="18_ol6lt"]
+[ext_resource type="Texture2D" uid="uid://ds1rijbh75pqf" path="res://assets/Little witch/Little witch/69x56/Pngs/Run Animation/Runanimation6.png" id="19_7kldq"]
+[ext_resource type="Texture2D" uid="uid://h3cgn51qgkgf" path="res://assets/Little witch/Little witch/69x56/Pngs/Jump Animation/Jumpanimation5.png" id="19_jpyth"]
+[ext_resource type="Texture2D" uid="uid://bn2tsqaw73njj" path="res://assets/Little witch/Little witch/69x56/Pngs/Run Animation/Runanimation7.png" id="20_6mhfv"]
+[ext_resource type="Texture2D" uid="uid://bewule3anl25n" path="res://assets/Little witch/Little witch/69x56/Pngs/Jump Animation/Jumpanimation6.png" id="20_rimxn"]
+[ext_resource type="Texture2D" uid="uid://gbapjb4rc6vj" path="res://assets/Little witch/Little witch/69x56/Pngs/Jump Animation/Jumpanimation7.png" id="21_gp0b2"]
+[ext_resource type="Texture2D" uid="uid://clvkttjcthc7q" path="res://assets/Little witch/Little witch/69x56/Pngs/Run Animation/Runanimation8.png" id="21_m2ujc"]
+[ext_resource type="Texture2D" uid="uid://qnmiy515rrro" path="res://assets/Little witch/Little witch/69x56/Pngs/Run Animation/Runanimation9.png" id="22_ew6mq"]
+[ext_resource type="Texture2D" uid="uid://ckbp3muhxd2a0" path="res://assets/Little witch/Little witch/69x56/Pngs/Jump Animation/Jumpanimation8.png" id="22_nwere"]
+[ext_resource type="Texture2D" uid="uid://sp8i342n1dwc" path="res://assets/Little witch/Little witch/69x56/Pngs/Jump Animation/Jumpanimation9.png" id="23_516li"]
+[ext_resource type="Texture2D" uid="uid://cmr7gao6jf3xw" path="res://assets/Little witch/Little witch/69x56/Pngs/Run Animation/Runanimation10.png" id="23_mkcbs"]
+[ext_resource type="Texture2D" uid="uid://thru4j71o6xn" path="res://assets/Little witch/Little witch/69x56/Pngs/Jump Animation/Jumpanimation10.png" id="24_msvvf"]
+[ext_resource type="Texture2D" uid="uid://cjwgltlvuno4g" path="res://assets/Little witch/Little witch/69x56/Pngs/Run Animation/Runanimation11.png" id="24_vnm52"]
+[ext_resource type="Texture2D" uid="uid://b3bv0glp8nxuh" path="res://assets/Little witch/Little witch/69x56/Pngs/Jump Animation/Jumpanimation11.png" id="25_6gl5r"]
+[ext_resource type="Texture2D" uid="uid://bsajg4vgc8q7j" path="res://assets/Little witch/Little witch/69x56/Pngs/Run Animation/Runanimation12.png" id="25_tpcnh"]
+[ext_resource type="Texture2D" uid="uid://btwafbh4ns00x" path="res://assets/Little witch/Little witch/69x56/Pngs/Run Animation/Runanimation13.png" id="26_6ay26"]
+[ext_resource type="Texture2D" uid="uid://cjv4yjeb6wjjo" path="res://assets/Little witch/Little witch/69x56/Pngs/Jump Animation/Jumpanimation12.png" id="26_jjkl4"]
+[ext_resource type="Texture2D" uid="uid://b13ne075pvaqy" path="res://assets/Little witch/Little witch/69x56/Pngs/Run Animation/Runanimation14.png" id="27_6a8wo"]
+[ext_resource type="Texture2D" uid="uid://bapopordsq8pc" path="res://assets/Little witch/Little witch/69x56/Pngs/Jump Animation/Jumpanimation13.png" id="27_nde44"]
+[ext_resource type="Texture2D" uid="uid://bueny7n7fo0vv" path="res://assets/Little witch/Little witch/69x56/Pngs/Jump Animation/Jumpanimation14.png" id="28_38oi0"]
+[ext_resource type="Texture2D" uid="uid://b2flphadsl8sk" path="res://assets/Little witch/Little witch/69x56/Pngs/Run Animation/Runanimation15.png" id="28_qxf27"]
+[ext_resource type="Texture2D" uid="uid://7hq18yrlctni" path="res://assets/Little witch/Little witch/69x56/Pngs/Run Animation/Runanimation16.png" id="29_5caun"]
+[ext_resource type="Texture2D" uid="uid://cmaqrkifyk50o" path="res://assets/Little witch/Little witch/69x56/Pngs/Jump Animation/Jumpanimation15.png" id="29_guvxm"]
+[ext_resource type="Texture2D" uid="uid://p4nsck0hbik8" path="res://assets/Little witch/Little witch/85x56/Pngs/Jump Animation/JumpAnimation13.png" id="33_55lbi"]
+[ext_resource type="Texture2D" uid="uid://256c1x3qpk5j" path="res://assets/Little witch/Little witch/85x56/Pngs/Jump Animation/JumpAnimation14.png" id="34_qftl4"]
+[ext_resource type="Texture2D" uid="uid://ctl6ojfwgvyrn" path="res://assets/Little witch/Little witch/85x56/Pngs/Jump Animation/JumpAnimation15.png" id="35_ulg0y"]
+
+[sub_resource type="GDScript" id="GDScript_bm14h"]
+script/source = "extends CharacterBody2D
+
+
+const SPEED = 400.0
+const JUMP_VELOCITY = -450.0
+var lasso = preload(\"res://lasso.tscn\")
+
+# Get the gravity from the project settings to be synced with RigidBody nodes.
+var gravity = ProjectSettings.get_setting(\"physics/2d/default_gravity\")
+@onready var anim = get_node(\"AnimationPlayer\")
+
+func _physics_process(delta):
+	# Add the gravity.
+	if not is_on_floor():
+		velocity.y += gravity * delta
+
+	# Handle Jump.
+	if Input.is_action_just_pressed(\"ui_accept\") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+		anim.play(\"Jump\")
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction = Input.get_axis(\"ui_left\", \"ui_right\")
+	if direction == -1:
+		get_node(\"AnimatedSprite2D\").flip_h = true
+	elif direction == 1:
+		get_node(\"AnimatedSprite2D\").flip_h = false
+	if direction:
+		velocity.x = direction * SPEED
+		if velocity.y == 0:
+			anim.play(\"Run\")
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		if velocity.y == 0:
+			anim.play(\"Idle\")
+	if velocity.y > 0:
+			anim.play(\"Fall\")
+	
+	var _player_pos = get_parent().global_position
+	var _mouse_pos = get_global_mouse_position()
+	print(get_tree().get_root().name)
+	if InputEventMouseButton and get_node(\"Player\") != null :
+		
+		lasso.instantiate()
+		lasso.get_node(\"Path2D\").get_curve().add_point(_mouse_pos)
+		#add_child()
+		pass 
+		
+	move_and_slide()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4uqk"]
+size = Vector2(20, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fdjv"]
+atlas = ExtResource("1_npngw")
+region = Rect2(0, 0, 69, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agjws"]
+atlas = ExtResource("1_npngw")
+region = Rect2(69, 0, 69, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y23fq"]
+atlas = ExtResource("1_npngw")
+region = Rect2(138, 0, 69, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kegjy"]
+atlas = ExtResource("1_npngw")
+region = Rect2(207, 0, 69, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjtdp"]
+atlas = ExtResource("1_npngw")
+region = Rect2(276, 0, 69, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ywmc"]
+atlas = ExtResource("1_npngw")
+region = Rect2(345, 0, 69, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x068b"]
+atlas = ExtResource("1_npngw")
+region = Rect2(414, 0, 69, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hc7p6"]
+atlas = ExtResource("1_npngw")
+region = Rect2(483, 0, 69, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_erh56"]
+atlas = ExtResource("1_npngw")
+region = Rect2(552, 0, 69, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l735c"]
+atlas = ExtResource("1_npngw")
+region = Rect2(621, 0, 69, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ddfgn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fdjv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agjws")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y23fq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kegjy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjtdp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ywmc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x068b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hc7p6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_erh56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l735c")
+}],
+"loop": true,
+"name": &"Death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_a66mg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yc8ho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2dv5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_55lbi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_qftl4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_ulg0y")
+}],
+"loop": true,
+"name": &"Fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_d6m2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_np477")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_au46v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_u2lrg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_v1rw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_esaey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0kgnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_70tb5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_t1wy8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_facgs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_y3mx0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ear64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_wn240")
+}],
+"loop": false,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_f2jj3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_81qdb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_g46bx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_8c2ur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_jpyth")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_rimxn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_gp0b2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_nwere")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_516li")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_msvvf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_6gl5r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_jjkl4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_nde44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_38oi0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_guvxm")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_55lbi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_qftl4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_ulg0y")
+}],
+"loop": true,
+"name": &"Land",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_v7nwg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_5a0kh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_j3uba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_58382")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ol6lt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_7kldq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_6mhfv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_m2ujc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ew6mq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_mkcbs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_vnm52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_tpcnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_6ay26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_6a8wo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_qxf27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_5caun")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_rpem1"]
+resource_name = "Death"
+length = 4.5
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Death"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+
+[sub_resource type="Animation" id="Animation_6cw3v"]
+resource_name = "Fall"
+length = 3.0
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Fall"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_4mh1k"]
+resource_name = "Idle"
+length = 6.0
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+}
+
+[sub_resource type="Animation" id="Animation_b4cbe"]
+resource_name = "Jump"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Jump"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="Animation" id="Animation_5kqry"]
+resource_name = "Land"
+length = 2.0
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Land"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_oirto"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Jump"]
+}
+
+[sub_resource type="Animation" id="Animation_vt7c1"]
+resource_name = "Run"
+length = 7.8
+loop_mode = 1
+step = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.00010153),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Run"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.000140592, 0.6, 1.2, 1.8, 2.4, 3, 3.6, 4.2, 4.8, 5.4, 6, 6.6, 7.2, 7.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 15]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5cgti"]
+_data = {
+"Death": SubResource("Animation_rpem1"),
+"Fall": SubResource("Animation_6cw3v"),
+"Idle": SubResource("Animation_4mh1k"),
+"Jump": SubResource("Animation_b4cbe"),
+"Land": SubResource("Animation_5kqry"),
+"RESET": SubResource("Animation_oirto"),
+"Run": SubResource("Animation_vt7c1")
+}
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+script = SubResource("GDScript_bm14h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(14, 8)
+shape = SubResource("RectangleShape2D_d4uqk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(15, 0)
+scale = Vector2(0.933, 1)
+sprite_frames = SubResource("SpriteFrames_ddfgn")
+animation = &"Jump"
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.6, 1.6)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Camera2D")
+autoplay = "Idle"
+speed_scale = 5.0
+libraries = {
+"": SubResource("AnimationLibrary_5cgti")
+}

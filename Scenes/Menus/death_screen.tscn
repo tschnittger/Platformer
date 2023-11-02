@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://y0q46mul2t6i"]
+
+[ext_resource type="Texture2D" uid="uid://c8dubv64t2l3e" path="res://assets/Sunny-land-files/Graphical Assets/environment/Background/back.png" id="1_m7p8u"]
+[ext_resource type="Script" path="res://death_screen.gd" id="1_uej7o"]
+[ext_resource type="FontFile" uid="uid://cyus4pj8fevg6" path="res://assets/Fonts/HeinzHeinrich-Regular.otf" id="2_tll5x"]
+
+[sub_resource type="GDScript" id="GDScript_8lwea"]
+script/source = "extends ParallaxBackground
+
+var scrolling_speed = 100
+
+func _process(delta):
+	scroll_offset.x -= scrolling_speed * delta
+"
+
+[sub_resource type="SystemFont" id="SystemFont_s1su7"]
+font_names = PackedStringArray("Javanese Text")
+
+[sub_resource type="LabelSettings" id="LabelSettings_e7vc7"]
+font = SubResource("SystemFont_s1su7")
+font_size = 72
+font_color = Color(1, 0, 0, 1)
+
+[node name="death_screen" type="Node2D"]
+script = ExtResource("1_uej7o")
+
+[node name="background2" type="ParallaxBackground" parent="."]
+script = SubResource("GDScript_8lwea")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="background2"]
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Back" type="Sprite2D" parent="background2/ParallaxLayer"]
+position = Vector2(964, 540)
+scale = Vector2(5.02083, 4.5)
+texture = ExtResource("1_m7p8u")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 813.0
+offset_top = 186.0
+offset_right = 1107.0
+offset_bottom = 353.0
+theme_override_fonts/font = ExtResource("2_tll5x")
+text = "You died!
+"
+label_settings = SubResource("LabelSettings_e7vc7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Retry" type="Button" parent="."]
+offset_left = 604.0
+offset_top = 380.0
+offset_right = 891.0
+offset_bottom = 487.0
+text = "Try again"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 1027.0
+offset_top = 380.0
+offset_right = 1314.0
+offset_bottom = 487.0
+text = "Quit"
+
+[connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

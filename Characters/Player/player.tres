@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dk28d5cyyxtnl"]
+
+[sub_resource type="SystemFont" id="SystemFont_cmb7w"]
+subpixel_positioning = 0
+
+[resource]
+font = SubResource("SystemFont_cmb7w")
+font_color = Color(0, 0.568627, 1, 1)
+outline_size = 4

@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://cenh2u1150pmm"]
+
+[ext_resource type="Script" path="res://scene_handler.gd" id="1_xusil"]
+[ext_resource type="PackedScene" uid="uid://dgg1apjsvqcwp" path="res://Scenes/Background/background.tscn" id="2_ia55j"]
+
+[node name="scene_handler" type="Node2D"]
+script = ExtResource("1_xusil")
+
+[node name="Play" type="Button" parent="."]
+top_level = true
+offset_left = 789.0
+offset_top = 207.0
+offset_right = 1203.0
+offset_bottom = 437.0
+text = "Play"
+
+[node name="Quit" type="Button" parent="."]
+top_level = true
+offset_left = 791.0
+offset_top = 562.0
+offset_right = 1205.0
+offset_bottom = 792.0
+text = "Quit
+"
+
+[node name="background" parent="." instance=ExtResource("2_ia55j")]
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
