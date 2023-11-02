@@ -6,24 +6,68 @@
 [node name="scene_handler" type="Node2D"]
 script = ExtResource("1_xusil")
 
-[node name="Play" type="Button" parent="."]
-top_level = true
-offset_left = 789.0
-offset_top = 207.0
-offset_right = 1203.0
-offset_bottom = 437.0
-text = "Play"
-
-[node name="Quit" type="Button" parent="."]
-top_level = true
-offset_left = 791.0
-offset_top = 562.0
-offset_right = 1205.0
-offset_bottom = 792.0
-text = "Quit
-"
-
 [node name="background" parent="." instance=ExtResource("2_ia55j")]
 
-[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[node name="main_buttons" type="FlowContainer" parent="."]
+clip_contents = true
+offset_left = 710.0
+offset_top = 35.0
+offset_right = 1210.0
+offset_bottom = 1045.0
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 50
+alignment = 1
+
+[node name="normal_run" type="Button" parent="main_buttons"]
+visible = false
+custom_minimum_size = Vector2(195, 200)
+layout_mode = 2
+disabled = true
+text = "Normal Run"
+
+[node name="arena_run" type="Button" parent="main_buttons"]
+visible = false
+custom_minimum_size = Vector2(195, 200)
+layout_mode = 2
+disabled = true
+text = "Arena Mode"
+
+[node name="new_game" type="Button" parent="main_buttons"]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+text = "New Game
+"
+
+[node name="return" type="Button" parent="main_buttons"]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+text = "Return
+"
+
+[node name="options" type="Button" parent="main_buttons"]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+text = "Options
+"
+
+[node name="quit" type="Button" parent="main_buttons"]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+text = "Quit"
+
+[node name="cancel_new_game" type="Button" parent="."]
+visible = false
+offset_left = 1175.0
+offset_top = 35.0
+offset_right = 1205.0
+offset_bottom = 66.0
+disabled = true
+text = "X"
+
+[connection signal="pressed" from="main_buttons/normal_run" to="." method="_on_normal_run_pressed"]
+[connection signal="pressed" from="main_buttons/arena_run" to="." method="_on_arena_run_pressed"]
+[connection signal="pressed" from="main_buttons/new_game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="main_buttons/return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="main_buttons/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="main_buttons/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="cancel_new_game" to="." method="_on_cancel_new_game_pressed"]
