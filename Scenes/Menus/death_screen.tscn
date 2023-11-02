@@ -1,10 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://y0q46mul2t6i"]
+[gd_scene load_steps=12 format=3 uid="uid://oo0ueir4jmro"]
 
+[ext_resource type="Script" path="res://Scenes/Menus/death_screen.gd" id="1_5ie4e"]
 [ext_resource type="Texture2D" uid="uid://c8dubv64t2l3e" path="res://assets/Sunny-land-files/Graphical Assets/environment/Background/back.png" id="1_m7p8u"]
-[ext_resource type="Script" path="res://death_screen.gd" id="1_uej7o"]
-[ext_resource type="FontFile" uid="uid://cyus4pj8fevg6" path="res://assets/Fonts/HeinzHeinrich-Regular.otf" id="2_tll5x"]
+[ext_resource type="Texture2D" uid="uid://brybe5gaajh1q" path="res://assets/Sunny-land-files/Graphical Assets/environment/Props/house.png" id="2_7i2km"]
+[ext_resource type="Texture2D" uid="uid://ip4al0i0twn8" path="res://assets/Sunny-land-files/Graphical Assets/environment/Props/tree.png" id="3_ag5nc"]
+[ext_resource type="Texture2D" uid="uid://b6rhknrrbe7it" path="res://assets/Sunny-land-files/Graphical Assets/environment/Props/tree-house.png" id="4_4w0kx"]
+[ext_resource type="Texture2D" uid="uid://c6o6y64skqemg" path="res://assets/Sunny-land-files/Graphical Assets/environment/Props/wooden-house.png" id="5_tet4m"]
+[ext_resource type="Texture2D" uid="uid://ddvqaq136pjl" path="res://assets/Sunny-land-files/Graphical Assets/environment/Props/plant-house.png" id="6_fq22u"]
+[ext_resource type="Texture2D" uid="uid://cf06nwyxhplu2" path="res://assets/Sunny-land-files/Graphical Assets/environment/Props/straw-house.png" id="7_wuwq8"]
+[ext_resource type="Texture2D" uid="uid://dnj4v760s1fr4" path="res://assets/Sunny-land-files/Graphical Assets/environment/Background/middle.png" id="8_dkvd2"]
 
-[sub_resource type="GDScript" id="GDScript_8lwea"]
+[sub_resource type="GDScript" id="GDScript_q7ely"]
 script/source = "extends ParallaxBackground
 
 var scrolling_speed = 100
@@ -13,53 +19,224 @@ func _process(delta):
 	scroll_offset.x -= scrolling_speed * delta
 "
 
-[sub_resource type="SystemFont" id="SystemFont_s1su7"]
-font_names = PackedStringArray("Javanese Text")
-
-[sub_resource type="LabelSettings" id="LabelSettings_e7vc7"]
-font = SubResource("SystemFont_s1su7")
-font_size = 72
-font_color = Color(1, 0, 0, 1)
+[sub_resource type="LabelSettings" id="LabelSettings_ahcqr"]
+font_size = 60
+font_color = Color(0.815686, 0, 0.117647, 1)
 
 [node name="death_screen" type="Node2D"]
-script = ExtResource("1_uej7o")
+script = ExtResource("1_5ie4e")
 
-[node name="background2" type="ParallaxBackground" parent="."]
-script = SubResource("GDScript_8lwea")
+[node name="background" type="ParallaxBackground" parent="."]
+script = SubResource("GDScript_q7ely")
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="background2"]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="background"]
 motion_mirroring = Vector2(1920, 0)
 
-[node name="Back" type="Sprite2D" parent="background2/ParallaxLayer"]
+[node name="Back" type="Sprite2D" parent="background/ParallaxLayer"]
 position = Vector2(964, 540)
 scale = Vector2(5.02083, 4.5)
 texture = ExtResource("1_m7p8u")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 813.0
-offset_top = 186.0
-offset_right = 1107.0
-offset_bottom = 353.0
-theme_override_fonts/font = ExtResource("2_tll5x")
-text = "You died!
-"
-label_settings = SubResource("LabelSettings_e7vc7")
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="background"]
+visible = false
+motion_scale = Vector2(0.7, 0.7)
+motion_mirroring = Vector2(1920, 0)
 
-[node name="Retry" type="Button" parent="."]
-offset_left = 604.0
-offset_top = 380.0
-offset_right = 891.0
-offset_bottom = 487.0
+[node name="House3" type="Sprite2D" parent="background/ParallaxLayer3"]
+position = Vector2(1264, 608)
+texture = ExtResource("2_7i2km")
+
+[node name="Tree6" type="Sprite2D" parent="background/ParallaxLayer3"]
+position = Vector2(840, 568)
+texture = ExtResource("3_ag5nc")
+
+[node name="House" type="Sprite2D" parent="background/ParallaxLayer3"]
+position = Vector2(320, 584)
+texture = ExtResource("2_7i2km")
+
+[node name="House2" type="Sprite2D" parent="background/ParallaxLayer3"]
+position = Vector2(816, 608)
+texture = ExtResource("2_7i2km")
+
+[node name="Tree" type="Sprite2D" parent="background/ParallaxLayer3"]
+position = Vector2(632, 480)
+texture = ExtResource("3_ag5nc")
+
+[node name="Tree7" type="Sprite2D" parent="background/ParallaxLayer3"]
+position = Vector2(1848, 568)
+texture = ExtResource("3_ag5nc")
+
+[node name="Tree8" type="Sprite2D" parent="background/ParallaxLayer3"]
+position = Vector2(1744, 568)
+texture = ExtResource("3_ag5nc")
+
+[node name="Tree9" type="Sprite2D" parent="background/ParallaxLayer3"]
+position = Vector2(1808, 608)
+texture = ExtResource("3_ag5nc")
+
+[node name="Tree10" type="Sprite2D" parent="background/ParallaxLayer3"]
+position = Vector2(1592, 552)
+texture = ExtResource("3_ag5nc")
+
+[node name="Tree11" type="Sprite2D" parent="background/ParallaxLayer3"]
+position = Vector2(1480, 560)
+texture = ExtResource("3_ag5nc")
+
+[node name="Tree12" type="Sprite2D" parent="background/ParallaxLayer3"]
+position = Vector2(1216, 576)
+texture = ExtResource("3_ag5nc")
+
+[node name="Tree13" type="Sprite2D" parent="background/ParallaxLayer3"]
+position = Vector2(1088, 600)
+texture = ExtResource("3_ag5nc")
+
+[node name="Tree14" type="Sprite2D" parent="background/ParallaxLayer3"]
+position = Vector2(1088, 600)
+texture = ExtResource("3_ag5nc")
+
+[node name="Tree15" type="Sprite2D" parent="background/ParallaxLayer3"]
+position = Vector2(752, 624)
+texture = ExtResource("3_ag5nc")
+
+[node name="Tree16" type="Sprite2D" parent="background/ParallaxLayer3"]
+position = Vector2(424, 560)
+texture = ExtResource("3_ag5nc")
+
+[node name="Tree17" type="Sprite2D" parent="background/ParallaxLayer3"]
+position = Vector2(528, 648)
+texture = ExtResource("3_ag5nc")
+
+[node name="Tree18" type="Sprite2D" parent="background/ParallaxLayer3"]
+position = Vector2(256, 624)
+texture = ExtResource("3_ag5nc")
+
+[node name="Tree19" type="Sprite2D" parent="background/ParallaxLayer3"]
+position = Vector2(256, 624)
+texture = ExtResource("3_ag5nc")
+
+[node name="Tree20" type="Sprite2D" parent="background/ParallaxLayer3"]
+position = Vector2(72, 544)
+texture = ExtResource("3_ag5nc")
+
+[node name="Tree21" type="Sprite2D" parent="background/ParallaxLayer3"]
+position = Vector2(152, 528)
+texture = ExtResource("3_ag5nc")
+
+[node name="Tree22" type="Sprite2D" parent="background/ParallaxLayer3"]
+position = Vector2(352, 520)
+texture = ExtResource("3_ag5nc")
+
+[node name="Tree4" type="Sprite2D" parent="background/ParallaxLayer3"]
+position = Vector2(1320, 560)
+texture = ExtResource("3_ag5nc")
+
+[node name="Tree5" type="Sprite2D" parent="background/ParallaxLayer3"]
+position = Vector2(712, 576)
+texture = ExtResource("3_ag5nc")
+
+[node name="Tree3" type="Sprite2D" parent="background/ParallaxLayer3"]
+position = Vector2(560, 600)
+texture = ExtResource("3_ag5nc")
+
+[node name="Tree2" type="Sprite2D" parent="background/ParallaxLayer3"]
+position = Vector2(1024, 616)
+texture = ExtResource("3_ag5nc")
+
+[node name="Tree-house" type="Sprite2D" parent="background/ParallaxLayer3"]
+position = Vector2(208, 552)
+texture = ExtResource("4_4w0kx")
+
+[node name="Tree-house" type="Sprite2D" parent="background/ParallaxLayer3/Tree-house"]
+position = Vector2(736, -40)
+texture = ExtResource("4_4w0kx")
+
+[node name="Wooden-house" type="Sprite2D" parent="background/ParallaxLayer3"]
+position = Vector2(464, 584)
+texture = ExtResource("5_tet4m")
+
+[node name="Wooden-house" type="Sprite2D" parent="background/ParallaxLayer3/Wooden-house"]
+position = Vector2(856, 24)
+texture = ExtResource("5_tet4m")
+
+[node name="Plant-house" type="Sprite2D" parent="background/ParallaxLayer3"]
+position = Vector2(32, 592)
+texture = ExtResource("6_fq22u")
+
+[node name="Plant-house" type="Sprite2D" parent="background/ParallaxLayer3/Plant-house"]
+position = Vector2(1512, -8)
+texture = ExtResource("6_fq22u")
+
+[node name="Straw-house" type="Sprite2D" parent="background/ParallaxLayer3"]
+position = Vector2(720, 592)
+texture = ExtResource("7_wuwq8")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="background"]
+visible = false
+motion_scale = Vector2(0.7, 0.7)
+motion_mirroring = Vector2(1792, 0)
+
+[node name="Middle" type="Sprite2D" parent="background/ParallaxLayer2"]
+position = Vector2(128, 792)
+scale = Vector2(1.45455, 1.6087)
+texture = ExtResource("8_dkvd2")
+
+[node name="Middle2" type="Sprite2D" parent="background/ParallaxLayer2"]
+position = Vector2(384, 788)
+scale = Vector2(1.45455, 1.58696)
+texture = ExtResource("8_dkvd2")
+
+[node name="Middle3" type="Sprite2D" parent="background/ParallaxLayer2"]
+position = Vector2(640, 788)
+scale = Vector2(1.45455, 1.58696)
+texture = ExtResource("8_dkvd2")
+
+[node name="Middle4" type="Sprite2D" parent="background/ParallaxLayer2"]
+position = Vector2(896, 788)
+scale = Vector2(1.45455, 1.58696)
+texture = ExtResource("8_dkvd2")
+
+[node name="Middle5" type="Sprite2D" parent="background/ParallaxLayer2"]
+position = Vector2(1152, 788)
+scale = Vector2(1.45455, 1.58696)
+texture = ExtResource("8_dkvd2")
+
+[node name="Middle6" type="Sprite2D" parent="background/ParallaxLayer2"]
+position = Vector2(1408, 784)
+scale = Vector2(1.45455, 1.6087)
+texture = ExtResource("8_dkvd2")
+
+[node name="Middle7" type="Sprite2D" parent="background/ParallaxLayer2"]
+position = Vector2(1664, 780)
+scale = Vector2(1.45455, 1.63043)
+texture = ExtResource("8_dkvd2")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 810.0
+offset_top = 370.0
+offset_right = 1110.0
+offset_bottom = 470.0
+text = "You died!"
+label_settings = SubResource("LabelSettings_ahcqr")
+horizontal_alignment = 1
+
+[node name="FlowContainer" type="FlowContainer" parent="."]
+offset_left = 585.0
+offset_top = 550.0
+offset_right = 1335.0
+offset_bottom = 850.0
+theme_override_constants/h_separation = 50
+theme_override_constants/v_separation = 20
+alignment = 1
+
+[node name="try_again" type="Button" parent="FlowContainer"]
+custom_minimum_size = Vector2(250, 100)
+layout_mode = 2
 text = "Try again"
 
-[node name="Quit" type="Button" parent="."]
-offset_left = 1027.0
-offset_top = 380.0
-offset_right = 1314.0
-offset_bottom = 487.0
+[node name="quit" type="Button" parent="FlowContainer"]
+custom_minimum_size = Vector2(250, 100)
+layout_mode = 2
 text = "Quit"
 
-[connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="FlowContainer/try_again" to="." method="_on_try_again_pressed"]
+[connection signal="pressed" from="FlowContainer/quit" to="." method="_on_quit_pressed"]
