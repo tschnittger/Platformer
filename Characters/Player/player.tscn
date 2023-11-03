@@ -194,38 +194,54 @@ func _handle_movement(delta):
 				add_to_queue(states.Fall)
 	_coyote_time()
 
+func _is_near_wall(dir):
+	if dir == \"left\":  
+		for i in $RayCast_left.get_child_count():
+			if $RayCast_left.get_child(i).is_colliding():
+				if \"Tile\" in $RayCast_left.get_child(i).get_collider().name: 
+					return true
+	elif dir == \"right\":
+		for i in $RayCast_right.get_child_count():
+			if $RayCast_right.get_child(i).is_colliding():
+				if \"Tile\" in $RayCast_right.get_child(i).get_collider().name:
+					return true
+	elif dir == \"both\": 
+		for i in $RayCast_left.get_child_count():
+			if $RayCast_left.get_child(i).is_colliding():
+				if \"Tile\" in $RayCast_left.get_child(i).get_collider().name: 
+					return true
+		for i in $RayCast_right.get_child_count():
+			if $RayCast_right.get_child(i).is_colliding():
+				if \"Tile\" in $RayCast_right.get_child(i).get_collider().name:
+					return true
+	return false
+
 # Handle Jump.
 func _handle_jump(delta):
-		if !jump_on_cd:
-			if Input.is_action_just_pressed(\"ui_accept\") and is_on_floor() or Input.is_action_just_pressed(\"ui_accept\") and is_on_wall():
-				if !is_on_wall():
-					velocity.y = JUMP_VELOCITY
-					anim.play(\"Jump\")
-					state = states.Jump
-					add_to_queue(states.Jump)
-					jump_on_cd = true
-				elif get_wall_normal() != last_wall_jumped_from or last_wall_jumped_from == null:
-					velocity.y = JUMP_VELOCITY
-					anim.play(\"Jump\")
-					state = states.Jump 
-					add_to_queue(states.Jump)
-					last_wall_jumped_from = get_wall_normal()
-					double_jump_used = true
-			if last_wall_jumped_from != null and (state == states.Idle or state == states.Pulled):
-				last_wall_jumped_from = null
-		else: 
-			if Input.is_action_pressed(\"ui_accept\") and jump_cd < init_jump_cd * double_jump_offset_perc and !double_jump_used:
-					velocity.y = JUMP_VELOCITY
-					anim.play(\"Jump\")
-					state = states.Jump
-					add_to_queue(states.Jump)
-					double_jump_used = true
-			jump_cd -= delta
-			if jump_cd <= 0 or is_on_floor():
-				jump_cd = init_jump_cd
-				jump_on_cd = false
-				double_jump_used = false
-				gravity_boost = false
+	if Input.is_action_just_pressed(\"ui_accept\"):
+		if velocity.y == 0 and !jump_on_cd:
+			velocity.y = JUMP_VELOCITY
+			anim.play(\"Jump\")
+			state = states.Jump
+			add_to_queue(states.Jump)
+			jump_on_cd = true
+		elif _is_near_wall(\"both\"):
+			if get_wall_normal() != last_wall_jumped_from or last_wall_jumped_from == null:
+				velocity.y = JUMP_VELOCITY
+				anim.play(\"Jump\")
+				state = states.Jump 
+				add_to_queue(states.Jump)
+				last_wall_jumped_from = get_wall_normal()
+				double_jump_used = true
+	if last_wall_jumped_from != null and velocity.y == 0:
+		last_wall_jumped_from = null
+	elif jump_on_cd: 
+		jump_cd -= delta
+		if jump_cd <= 0 and state == states.Idle or jump_cd <= 0 and state == states.Run:
+			jump_cd = init_jump_cd
+			jump_on_cd = false
+			double_jump_used = false
+			gravity_boost = false
 
 func _handle_checkups():
 	_check_alive()
@@ -287,18 +303,27 @@ func _handle_meele_combat():
 		$meeles.add_child(temp_attack)
 
 func _handle_raycast():
+	var ray_shift_side = -40
+	for i in $RayCast_left.get_child_count():
+		var temp_pos = global_position
+		temp_pos.x += 21
+		temp_pos.y += ray_shift_side
+		$RayCast_right.get_child(i).global_position = temp_pos
+		temp_pos.x = global_position.x -21
+		$RayCast_left.get_child(i).global_position = temp_pos
+		ray_shift_side += 40
 	var ray_shift = -20
-	for i in $RayCast.get_child_count():
-		$RayCast.get_child(i).global_position = global_position
-		$RayCast.get_child(i).global_position.x += ray_shift
-		$RayCast.get_child(i).global_position.y += -41
+	for i in $RayCast_up.get_child_count():
+		$RayCast_up.get_child(i).global_position = global_position
+		$RayCast_up.get_child(i).global_position.x += ray_shift
+		$RayCast_up.get_child(i).global_position.y += -41
 		ray_shift += 10
-		if $RayCast.get_child(i).is_colliding() and state == states.Jump:
-			if \"Player\" not in $RayCast.get_child(i).get_collider():
-				if i == 4 and not $RayCast.get_child(i-1).is_colliding():
-					_handle_soft_edging($RayCast.get_child(i))
-				elif i == 0 and not $RayCast.get_child(i+1).is_colliding():
-					_handle_soft_edging($RayCast.get_child(i))
+		if $RayCast_up.get_child(i).is_colliding() and state == states.Jump:
+			if \"Player\" not in $RayCast_up.get_child(i).get_collider():
+				if i == 4 and not $RayCast_up.get_child(i-1).is_colliding():
+					_handle_soft_edging($RayCast_up.get_child(i))
+				elif i == 0 and not $RayCast_up.get_child(i+1).is_colliding():
+					_handle_soft_edging($RayCast_up.get_child(i))
 
 func _handle_soft_edging(RayCast):
 	if RayCast.get_collision_point().y - RayCast.global_position.y > _smooth_edging_height:
@@ -331,11 +356,12 @@ func _perform_hook_physics(goal, direction):
 		velocity.x = goal_norm.x * SPEED * speed_modifier
 		velocity.y = goal_norm.y * SPEED * speed_modifier
 
+#Allows user to jump even after walking off the ground and falling for a few frames 
 func _coyote_time():
 	for i in coyote_overlap:
 		if last_states_queue[i] == \"Fall\" and i < coyote_overlap:
 			for j in i:
-				if i+j<=10 and last_states_queue[i+j] == \"Run\" and Input.is_action_pressed(\"ui_accept\"):
+				if i+j<=coyote_overlap and last_states_queue[i+j] == \"Run\" and Input.is_action_pressed(\"ui_accept\") and !jump_on_cd:
 					velocity.y = JUMP_VELOCITY
 					anim.play(\"Jump\")
 					state = states.Jump
@@ -1197,29 +1223,70 @@ points = PackedVector2Array(0, 0)
 width = 2.0
 default_color = Color(1, 0, 0, 1)
 
-[node name="RayCast" type="Node" parent="."]
+[node name="RayCast_up" type="Node" parent="."]
 
-[node name="RayCast2D1" type="RayCast2D" parent="RayCast"]
+[node name="RayCast2D1" type="RayCast2D" parent="RayCast_up"]
 visible = false
 position = Vector2(-20, -40)
 target_position = Vector2(0, -90)
 
-[node name="RayCast2D2" type="RayCast2D" parent="RayCast"]
+[node name="RayCast2D2" type="RayCast2D" parent="RayCast_up"]
 visible = false
 position = Vector2(-10, -40)
 target_position = Vector2(0, -90)
 
-[node name="RayCast2D3" type="RayCast2D" parent="RayCast"]
+[node name="RayCast2D3" type="RayCast2D" parent="RayCast_up"]
 visible = false
 position = Vector2(0, -40)
 target_position = Vector2(0, -90)
 
-[node name="RayCast2D4" type="RayCast2D" parent="RayCast"]
+[node name="RayCast2D4" type="RayCast2D" parent="RayCast_up"]
 visible = false
 position = Vector2(10, -40)
 target_position = Vector2(0, -90)
 
-[node name="RayCast2D5" type="RayCast2D" parent="RayCast"]
+[node name="RayCast2D5" type="RayCast2D" parent="RayCast_up"]
 visible = false
 position = Vector2(20, -40)
 target_position = Vector2(0, -90)
+
+[node name="RayCast_right" type="Node" parent="."]
+
+[node name="RayCast2D" type="RayCast2D" parent="RayCast_right"]
+visible = false
+position = Vector2(20, -40)
+target_position = Vector2(15, 0)
+collision_mask = 3
+
+[node name="RayCast2D2" type="RayCast2D" parent="RayCast_right"]
+visible = false
+position = Vector2(20, 0)
+target_position = Vector2(15, 0)
+collision_mask = 3
+hit_from_inside = true
+
+[node name="RayCast2D3" type="RayCast2D" parent="RayCast_right"]
+visible = false
+position = Vector2(20, 40)
+target_position = Vector2(15, 0)
+
+[node name="RayCast_left" type="Node" parent="."]
+
+[node name="RayCast2D" type="RayCast2D" parent="RayCast_left"]
+visible = false
+position = Vector2(0, -40)
+target_position = Vector2(-15, 0)
+collide_with_areas = true
+
+[node name="RayCast2D2" type="RayCast2D" parent="RayCast_left"]
+visible = false
+target_position = Vector2(-15, 0)
+hit_from_inside = true
+collide_with_areas = true
+
+[node name="RayCast2D3" type="RayCast2D" parent="RayCast_left"]
+visible = false
+position = Vector2(0, 40)
+target_position = Vector2(-15, 0)
+hit_from_inside = true
+collide_with_areas = true

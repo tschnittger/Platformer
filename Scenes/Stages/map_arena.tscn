@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cauldy2hldsev"]
+[gd_scene load_steps=11 format=3 uid="uid://cauldy2hldsev"]
 
 [ext_resource type="Script" path="res://Scenes/Stages/map_arena.gd" id="1_xwhtt"]
 [ext_resource type="Texture2D" uid="uid://dxxfa3o8vpp3c" path="res://assets/aamatniekss/FreeCuteTilesetv1/FreeCuteTileset/BG1.png" id="2_50dsb"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cgtlf1grrvpko" path="res://assets/aamatniekss/FreeCuteTilesetv1/FreeCuteTileset/BG2.png" id="3_np642"]
 [ext_resource type="Texture2D" uid="uid://gdfq7lnw8f8w" path="res://assets/aamatniekss/FreeCuteTilesetv1/FreeCuteTileset/BG3.png" id="4_unvvs"]
 [ext_resource type="PackedScene" uid="uid://kic4ptnym7o6" path="res://Characters/Player/player.tscn" id="6_oc3ah"]
+[ext_resource type="PackedScene" uid="uid://bkgvtk35i8cvd" path="res://Characters/NPCs/green_frog.tscn" id="7_gx0x8"]
 
 [sub_resource type="GDScript" id="GDScript_7ovqg"]
 script/source = "extends ParallaxBackground
@@ -402,4 +403,7 @@ layer_2/z_index = 2
 layer_2/tile_data = PackedInt32Array(655379, 327680, 4, 720915, 327680, 4, 786451, 327680, 4, 851987, 327680, 4, 917523, 327680, 4, 983059, 327680, 4, 655380, 458752, 4, 720916, 458752, 4, 786452, 458752, 4, 851988, 458752, 4, 917524, 458752, 4, 983060, 458752, 4, 589843, 327680, 3, 589844, 458752, 3)
 
 [node name="Player" parent="." instance=ExtResource("6_oc3ah")]
-position = Vector2(632, 688)
+position = Vector2(720, 720)
+
+[node name="green_frog" parent="." instance=ExtResource("7_gx0x8")]
+position = Vector2(592, 744)

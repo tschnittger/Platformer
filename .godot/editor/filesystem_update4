@@ -1,10 +1,6 @@
-res://scene_handler.gd
-res://scene_handler.tscn
-res://Characters/Player/player.tres
-res://Scenes/Background/background_2.tscn
-res://options_screen.tscn
-res://options_screen.gd
-res://Scenes/Menus/options_screen.tscn
 res://Characters/Player/player.tscn
+res://Characters/Player/player.tres
+res://scene_handler.tscn
+res://Scenes/Menus/options_screen.tscn
 res://Scenes/Menus/death_screen.tscn
-res://Scenes/Menus/death_screen.gd
+res://Scenes/Stages/map_arena.tscn
