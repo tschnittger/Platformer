@@ -79,7 +79,7 @@ const gravity_boost_jump_offset = 0.6
 const speed_modifier_boosted_x = 1.3
 const speed_modifier_boosted_y = 1.8
 const speed_modifier = 1.2
-
+const hook_player_dis_threshhold = 50
 
 var state
 var hp_total 
@@ -278,7 +278,7 @@ func _handle_hook(delta):
 			_init_hook_physics(temp_lasso)
 			
 		# delete hook if button released or end reached
-		if global_position.distance_to(temp_lasso.global_position) < 50 and !temp_lasso.shooting or Input.is_action_just_released(\"ui_home\"):
+		if global_position.distance_to(temp_lasso.global_position) < hook_player_dis_threshhold and !temp_lasso.shooting or Input.is_action_just_released(\"ui_home\"):
 			temp_lasso.queue_free()
 	else:
 		line.visible = false
