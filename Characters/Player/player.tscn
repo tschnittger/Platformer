@@ -277,9 +277,8 @@ func _handle_hook(delta):
 			anim.get_animation(\"Jump\").loop_mode = 0
 			_init_hook_physics(temp_lasso)
 			
-		# delete hook with possible jump
-		if global_position.distance_to(temp_lasso.global_position) < 50 and !temp_lasso.shooting or Input.is_action_just_released(\"ui_home\") or (velocity.y == 0 and !is_on_floor_only()):
-			
+		# delete hook if button released or end reached
+		if global_position.distance_to(temp_lasso.global_position) < 50 and !temp_lasso.shooting or Input.is_action_just_released(\"ui_home\"):
 			temp_lasso.queue_free()
 	else:
 		line.visible = false
