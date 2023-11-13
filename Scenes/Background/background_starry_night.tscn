@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2flgm3mbpxau"]
+
+[ext_resource type="Texture2D" uid="uid://b4xpcsgl1c317" path="res://assets/Quintino/starry_night/background_sky.png" id="1_2gg57"]
+[ext_resource type="Texture2D" uid="uid://nck0x8b6h0uy" path="res://assets/Quintino/starry_night/clouds.png" id="2_4m57p"]
+
+[node name="Background_starry_night" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+
+[node name="BackgroundSky" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(960, 540)
+scale = Vector2(5.33333, 6)
+texture = ExtResource("1_2gg57")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+
+[node name="Clouds" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(959.5, 536)
+scale = Vector2(5.33611, 6.01111)
+texture = ExtResource("2_4m57p")
