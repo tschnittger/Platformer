@@ -1,6 +1,12 @@
-res://Characters/Player/player.tscn
 res://Characters/Player/player.tres
+res://Scenes/Background/background_starry_night.tscn
 res://scene_handler.tscn
+res://scene_handler.gd
 res://Scenes/Menus/options_screen.tscn
+res://Characters/Player/player.tscn
 res://Scenes/Menus/death_screen.tscn
 res://Scenes/Stages/map_arena.tscn
+res://Scenes/Stages/map_2.tscn
+res://Scenes/Background/map_starry_night.tscn
+res://Scenes/Stages/map_starry_night.tscn
+res://Scenes/Stages/map_starry_night.gd
