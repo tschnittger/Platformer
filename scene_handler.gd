@@ -31,7 +31,7 @@ func _on_arena_run_pressed():
 
 func _on_normal_run_pressed():
 	last_mode = "normal"
-	get_tree().change_scene_to_file("res://Scenes/Stages/map_2.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Stages/map_starry_night.tscn")
 
 
 func _change_new_game_selection(turn):
